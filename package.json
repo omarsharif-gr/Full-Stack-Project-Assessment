@@ -4,7 +4,7 @@
   "description": "Before you continue to final projects we have to make sure that you can meaningfully contribute to a technical project.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
