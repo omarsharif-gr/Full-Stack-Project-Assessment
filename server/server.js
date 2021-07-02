@@ -13,7 +13,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // Store and retrieve your videos from here
 // If you want, you can copy "exampleresponse.json" into here to have some data to work with
-let videos = exampleResponse;
+const videos = exampleResponse;
 
 
 // GET "/"
@@ -43,15 +43,20 @@ app.get("/:id", (req, res) => {
 res.send(finalVideo)
 });
 
-app.delete("/change/:id", (req, res) => {
+app.delete("/:id", (req, res) => {
   console.log(req.params.id)
-  const iDToDelete = req.params.id;
-  const videoToDelete = videos.map((video)=>{
-    if (video.id === Number(iDToDelete)) {
-      return (video);
-    }
-  })
-  const deletedVideo = videoToDelete;
-  res.send(videos.splice(deletedVideo));
+  const identifiedElem = videos.some(
+    video => video.id.toString() === req.params.id
+  )
+  if (identifiedElem) {
+    res.json(videos.filter(video => video.id.toString() !== req.params.id))
+  }
+  else {
+    res.status(400).send(`There's no video with the id ${req.params.id}`);
+  }
+  res.send(identifiedElem)
 });
+
+
+
 

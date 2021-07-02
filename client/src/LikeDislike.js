@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import exampleresponse from "./exampleresponse.json"
-import ListItems from "./ListItem";
+import ListItems from "./ListItems";
 const Example = (props) => {
     const [like,setLike]=useState(props.videos);
     const [dislike,setDislike]=useState(0);

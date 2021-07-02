@@ -1,6 +1,6 @@
 import "./App.css";
 import VideosComponent from "./VideosComponent";
-import ListItems from "./ListItem";
+import ListItems from "./ListItems";
 import React, { Component } from 'react';
 
 // random value generator:
@@ -104,13 +104,24 @@ class App extends React.Component {
     this.setState({
       videos: filteredVideos
     })
-  }
-   deleteVideoInput(key) {
-    const filteredVideos = this.state.videos.filter(video => video.key !== key);
-    this.setState({
-      videos: filteredVideos
+    const data = {
+      id: this.state.currentVideo.id, title: this.state.currentVideo.title, url: this.state.currentVideo.url, rating: this.state.currentVideo.rating  };
+    fetch('http://localhost:5000/', {
+      method: 'DELETE', 
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    }); 
   }
+
   render() {
     return (
       <div>
