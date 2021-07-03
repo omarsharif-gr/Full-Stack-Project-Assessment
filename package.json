@@ -2,9 +2,10 @@
   "name": "Full-Stack-Project-Assessment",
   "version": "1.0.0",
   "description": "Before you continue to final projects we have to make sure that you can meaningfully contribute to a technical project.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
