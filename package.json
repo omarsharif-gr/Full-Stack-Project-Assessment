@@ -2,9 +2,9 @@
   "name": "Full-Stack-Project-Assessment",
   "version": "1.0.0",
   "description": "Before you continue to final projects we have to make sure that you can meaningfully contribute to a technical project.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/omarsharif-gr/Full-Stack-Project-Assessment#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.9"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.9",
+    "prohairesis": "^1.2.4"
   },
   "engines": {
     "node": "14.15.1"
