@@ -16,20 +16,6 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 const videos = exampleResponse;
 
 
-const { Pool } = require("pg");
-const pool = new Pool({
-  user: "pmxyzyhluuybrv",
-  host: "ec2-54-155-254-112.eu-west-1.compute.amazonaws.com",
-  database: "db4je6chdm1u5o",
-  password: "a83578cfdf7c4fcfb367b4683dd7b49d999f466db222bd3a66aadc65a5f3043a",
-  port: 5432,
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-
-  
-})
 
 // GET "/"
 app.get("/", (req, res) => {
