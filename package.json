@@ -4,7 +4,7 @@
   "description": "Before you continue to final projects we have to make sure that you can meaningfully contribute to a technical project.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "server.js",
     "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.9",
+    "pg": "^8.6.0",
     "prohairesis": "^1.2.4"
   },
   "engines": {
