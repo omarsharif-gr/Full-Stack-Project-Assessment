@@ -6,8 +6,17 @@ app.use(express.json())
 app.use(express.static(__dirname))
 var bodyParser = require("body-parser")
 app.use(bodyParser.json())
+const { Pool } = require("pg");
 const exampleResponse = require("./exampleresponse.json")
 const port = process.env.PORT || 5000;
+
+const pool = new Pool({
+    user: 'jpnihcxooyrini',
+    host: 'ec2-63-34-97-163.eu-west-1.compute.amazonaws.com',
+    database: 'd8c3grvol7tv0n',
+    password: "2ff0a67b775bec4ba47e6bbbad6d7ab96e2fc6807f2e0194a5fad2616c7ae306",
+    port: 5432
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
