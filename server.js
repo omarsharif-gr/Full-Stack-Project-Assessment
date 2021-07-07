@@ -11,13 +11,18 @@ const exampleResponse = require("./exampleresponse.json")
 const port = process.env.PORT || 5000;
 
 const pool = new Pool({
+    // connectionString: process.env.DATABASE_URL,
     user: 'jpnihcxooyrini',
     host: 'ec2-63-34-97-163.eu-west-1.compute.amazonaws.com',
     database: 'd8c3grvol7tv0n',
     password: "2ff0a67b775bec4ba47e6bbbad6d7ab96e2fc6807f2e0194a5fad2616c7ae306",
     port: 5432
 });
-
+app.get("/hotels", function (req, res) {
+  pool.query("SELECT * FROM *")
+    .then((result) => res.json(result.rows))
+    .catch((e) => console.error(e));
+});
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // Store and retrieve your videos from here
